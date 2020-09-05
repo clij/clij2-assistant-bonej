@@ -1,14 +1,10 @@
-package net.haesleinhuepf.clijx.imagej2;
+package net.haesleinhuepf.clijx.bonej;
 
 
-import ij.IJ;
 import ij.ImagePlus;
 import ij.ImageStack;
 import ij.process.FloatProcessor;
-import ij.process.ShortProcessor;
 import net.haesleinhuepf.clij.clearcl.ClearCLBuffer;
-import net.haesleinhuepf.clij.converters.implementations.ClearCLBufferToImagePlusConverter;
-import net.haesleinhuepf.clij.converters.implementations.ImagePlusToClearCLBufferConverter;
 import net.haesleinhuepf.clij.macro.CLIJMacroPlugin;
 import net.haesleinhuepf.clij.macro.CLIJOpenCLProcessor;
 import net.haesleinhuepf.clij.macro.documentation.OffersDocumentation;
@@ -17,17 +13,10 @@ import net.haesleinhuepf.clij2.CLIJ2;
 import net.haesleinhuepf.clij2.utilities.HasAuthor;
 import net.haesleinhuepf.clij2.utilities.HasLicense;
 import net.haesleinhuepf.clij2.utilities.IsCategorized;
-import net.haesleinhuepf.clijx.clij2wrappers.ConnectedComponentsLabelingBox;
-import net.imagej.ops.OpService;
-import net.imglib2.RandomAccessibleInterval;
 import org.bonej.plugins.ConnectedComponents;
-import org.scijava.Context;
-import org.scijava.command.CommandService;
 import org.scijava.plugin.Plugin;
 
-import java.util.Arrays;
-
-@Plugin(type = CLIJMacroPlugin.class, name = "CLIJx_BoneJ_connectedComponentsLabeling")
+@Plugin(type = CLIJMacroPlugin.class, name = "CLIJx_boneJConnectedComponentsLabeling")
 public class BoneJConnectedComponentsLabeling extends AbstractCLIJ2Plugin implements CLIJMacroPlugin, CLIJOpenCLProcessor, OffersDocumentation, IsCategorized, HasAuthor, HasLicense
 {
     public BoneJConnectedComponentsLabeling() {
@@ -89,7 +78,7 @@ public class BoneJConnectedComponentsLabeling extends AbstractCLIJ2Plugin implem
 
     @Override
     public String getCategories() {
-        return "Filter";
+        return "Labeling";
     }
 
     @Override
