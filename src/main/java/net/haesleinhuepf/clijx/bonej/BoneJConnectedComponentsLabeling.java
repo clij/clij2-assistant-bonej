@@ -17,7 +17,7 @@ import org.bonej.plugins.ConnectedComponents;
 import org.scijava.plugin.Plugin;
 
 @Plugin(type = CLIJMacroPlugin.class, name = "CLIJx_boneJConnectedComponentsLabeling")
-public class BoneJConnectedComponentsLabeling extends AbstractCLIJ2Plugin implements CLIJMacroPlugin, CLIJOpenCLProcessor, OffersDocumentation, IsCategorized, HasAuthor, HasLicense
+public class BoneJConnectedComponentsLabeling extends AbstractCLIJ2Plugin implements CLIJMacroPlugin, CLIJOpenCLProcessor, OffersDocumentation, IsCategorized
 {
     public BoneJConnectedComponentsLabeling() {
         super();
@@ -79,16 +79,6 @@ public class BoneJConnectedComponentsLabeling extends AbstractCLIJ2Plugin implem
     @Override
     public String getCategories() {
         return "Labeling";
-    }
-
-    @Override
-    public String getAuthorName() {
-        return "Put your name here.";
-    }
-
-    @Override
-    public String getLicense() {
-        return "Public domain";
     }
 
     public static void main(String[] args) {
