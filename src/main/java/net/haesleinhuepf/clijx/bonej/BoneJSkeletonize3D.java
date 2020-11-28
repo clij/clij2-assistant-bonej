@@ -10,13 +10,14 @@ import net.haesleinhuepf.clij.macro.CLIJOpenCLProcessor;
 import net.haesleinhuepf.clij.macro.documentation.OffersDocumentation;
 import net.haesleinhuepf.clij2.AbstractCLIJ2Plugin;
 import net.haesleinhuepf.clij2.CLIJ2;
+import net.haesleinhuepf.clij2.utilities.HasClassifiedInputOutput;
 import net.haesleinhuepf.clij2.utilities.IsCategorized;
 import org.bonej.plugins.ConnectedComponents;
 import org.bonej.util.SkeletonUtils;
 import org.scijava.plugin.Plugin;
 
 @Plugin(type = CLIJMacroPlugin.class, name = "CLIJx_boneJSkeletonize3D")
-public class BoneJSkeletonize3D extends AbstractCLIJ2Plugin implements CLIJMacroPlugin, CLIJOpenCLProcessor, OffersDocumentation, IsCategorized
+public class BoneJSkeletonize3D extends AbstractCLIJ2Plugin implements CLIJMacroPlugin, CLIJOpenCLProcessor, OffersDocumentation, IsCategorized, HasClassifiedInputOutput
 {
     public BoneJSkeletonize3D() {
         super();
@@ -65,5 +66,15 @@ public class BoneJSkeletonize3D extends AbstractCLIJ2Plugin implements CLIJMacro
     @Override
     public String getCategories() {
         return "Binary";
+    }
+
+    @Override
+    public String getInputType() {
+        return "Binary Image";
+    }
+
+    @Override
+    public String getOutputType() {
+        return "Binary Image";
     }
 }
