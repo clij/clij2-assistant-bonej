@@ -109,4 +109,10 @@ public class BoneJConnectedComponentsLabeling extends AbstractCLIJ2Plugin implem
     public String getOutputType() {
         return "Label Image";
     }
+    
+    
+    @Override
+    public ClearCLBuffer createOutputBufferFromSource(ClearCLBuffer input) {
+        return clij.create(input.getDimensions(), NativeTypeEnum.Float);
+    }
 }
